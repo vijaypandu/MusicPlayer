@@ -1,0 +1,229 @@
+/* Images created by: https://unsplash.com/@pawel_czerwinski */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: url('https://images.unsplash.com/uploads/1412282232015a06e258a/4bdd2a58?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bXVzaWMlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fHww'); /* Replace with your image path */
+  background-size: cover; /* Cover the entire background */
+  background-position: center; /* Center the background image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.player-container {
+  height: 500px;
+  width: 400px;
+  background: #2d3436; /* Dark gray background */
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.img-container {
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.img-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.img-container:hover img {
+  transform: scale(1.1);
+}
+
+h2 {
+  font-size: 28px;
+  text-align: center;
+  margin: 20px 0 10px;
+  color: #dfe6e9; /* Light gray text */
+}
+
+h3 {
+  font-size: 18px;
+  text-align: center;
+  font-weight: 400;
+  margin: 5px 0 0;
+  color: #b2bec3; /* Medium gray text */
+}
+
+/* Progress */
+.progress-container {
+  background: #636e72; /* Medium gray background for progress bar container */
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px 0;
+  height: 6px;
+  width: 90%;
+}
+
+.progress {
+  background: #00cec9; /* Teal for progress bar */
+  border-radius: 5px;
+  height: 100%;
+  width: 50%; /* Example width, adjust as needed */
+  transition: width 0.3s ease;
+}
+
+.duration-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  color: #b2bec3; /* Medium gray text */
+}
+
+/* Controls */
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.fas {
+  font-size: 24px;
+  color: #dfe6e9; /* Light gray icon color */
+  margin: 0 10px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.fas:hover {
+  color: #00cec9; /* Teal on hover */
+}
+
+.main-button {
+  font-size: 30px;
+  color: #dfe6e9; /* Light gray button text color */
+  background-color: #2d3436; /* Dark gray button background */
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+.main-button:hover {
+  background-color: #636e72; /* Medium gray on hover */
+}
+
+/* Shuffle Button */
+/* Music List Button */
+.fas.fa-list {
+  font-size: 24px;
+  color: #dfe6e9; /* Light gray icon color */
+  margin: 0 10px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.fas.fa-list:hover {
+  color: #00cec9; /* Teal on hover */
+}
+
+/* Music List Container (Hidden by default) */
+.music-list-container {
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  color: #dfe6e9;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  padding: 20px;
+  width: 80%;
+  max-width: 300px;
+  z-index: 1000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.music-list-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.music-list-container li {
+  padding: 10px;
+  border-bottom: 1px solid #2d3436;
+  cursor: pointer;
+}
+
+.music-list-container li:hover {
+  background-color: #636e72;
+}
+
+
+/* Loop Button */
+#loop {
+  font-size: 24px;
+  color: #dfe6e9; /* Light gray */
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* Loop button active state */
+#loop.active {
+  color: #00cec9; /* Teal or any color you prefer to indicate active state */
+  font-size: 26px; /* Slightly larger to show it's active */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Media Query: iPhone (Vertical) */
+@media screen and (max-width: 376px) {
+  .player-container {
+    width: 95vw;
+  }
+
+  .img-container {
+    height: 200px;
+    width: 200px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 15px;
+  }
+
+  .player-controls {
+    margin-top: 10px;
+  }
+}
